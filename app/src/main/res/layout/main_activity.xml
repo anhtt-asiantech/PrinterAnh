@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:orientation="vertical"
+    tools:context="de.httptandooripalace.restaurantorderprinter.MainActivity"
+    android:weightSum="1">
+
+    <!--<EditText-->
+        <!--android:id="@+id/search"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="fill_horizontal"-->
+        <!--android:hint="@string/search"-->
+        <!--android:layout_weight="0.55"-->
+        <!--/>-->
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_menu_agenda"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="12dp"
+        android:onClick="gotoOverview"
+        android:id="@+id/floatingActionButton4" />
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/overview_layout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+      <!--  <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:onClick="setFocusToTableNumber"
+            >
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Ref."
+                android:textSize="24dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:background="@android:color/transparent"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
+                android:id="@+id/ref_nr"
+
+                />
+
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:onClick="setFocusToTableNumber"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_number"
+                android:paddingStart="12dp"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginStart="12dp"
+                android:background="@android:color/transparent"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
+                android:minWidth="62dp"
+                android:id="@+id/table_number"
+                android:hint="#"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"/>
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:id="@+id/swiperefresh"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+
+        <ExpandableListView
+            android:id="@+id/overview_main"
+            android:layout_width="match_parent"
+            android:layout_height="376dp"
+            android:addStatesFromChildren="false"
+            android:clickable="true"
+            android:focusable="true"
+
+            android:focusableInTouchMode="true" />
+
+        <Button
+            android:id="@+id/bill_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    </LinearLayout>
+
+
+</RelativeLayout>
